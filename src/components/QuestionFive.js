@@ -13,6 +13,7 @@ const QuestionFive = () => {
 
     const [ query, setQuery ] = useState('')
     const [ queryResults, setQueryResults ] = useState([])
+    const [ cityLoading, setCityLoading ] = useState(false)
     const [ weatherLoading, setWeatherLoading  ] = useState(false)
     const [ locationWeather, setLocationWeather ] = useState('')
 
@@ -27,7 +28,9 @@ const QuestionFive = () => {
         const url = `https://www.metaweather.com/api/location/search/?query=${query}`
         
         const getData = async (url) => {
+            setCityLoading(true)
            const { data } = await axios.get(url)
+           setCityLoading(false)
            setQueryResults(data)
         }
 
@@ -60,14 +63,17 @@ const QuestionFive = () => {
 
                     <div className="results">
                         {
-
+                            cityLoading && <h5>Loading...</h5>
                         }
                         {
+                            queryResults.length === 0 ? <p style = {{marginTop : '20px'}}>No Results Currently</p> :
+                            (
                             queryResults.map( location => (
                                 <div key = {location.woeid} className = 'search__result' onClick = {() => searchLocation(location.woeid)}>
                                     <p>{location.title}</p>
                                 </div>
                             ))
+                            )
                         }
                     </div>
                 </div>
@@ -76,19 +82,21 @@ const QuestionFive = () => {
                             weatherLoading && <h2 style = {{alignSelf : 'center'}}>Loading...</h2>
                         }
                         {
-                            locationWeather && 
-                            <div className = 'weather__card'>
-                                <h4>{locationWeather.title}, {locationWeather.country}</h4>
-                                <h5>{locationWeather.weather_state_name}</h5>
-                                <img src={`https://www.metaweather.com/static/img/weather/${locationWeather.weather_state_abbr}.svg`} alt="weather_symbol" style = {{height: '40px', width : '40px'}} />
-                                <p>Date : {locationWeather.applicable_date}</p>
-                                <p>Temp: {(locationWeather.the_temp).toFixed(2)} °C</p>
-                                <p>Max Temp: {(locationWeather.max_temp).toFixed(2)} °C</p>
-                                <p>Min Temp: {(locationWeather.min_temp).toFixed(2)} °C</p>
-                                <p>Wind Speed: {(locationWeather.wind_speed).toFixed(2)} mph</p>
+                            locationWeather &&
+                            (
+                                <div className = 'weather__card'>
+                                    <h4>{locationWeather.title}, {locationWeather.country}</h4>
+                                    <h5>{locationWeather.weather_state_name}</h5>
+                                    <img src={`https://www.metaweather.com/static/img/weather/${locationWeather.weather_state_abbr}.svg`} alt="weather_symbol" style = {{height: '40px', width : '40px'}} />
+                                    <p>Date : {locationWeather.applicable_date}</p>
+                                    <p>Temp: {(locationWeather.the_temp).toFixed(2)} °C</p>
+                                    <p>Max Temp: {(locationWeather.max_temp).toFixed(2)} °C</p>
+                                    <p>Min Temp: {(locationWeather.min_temp).toFixed(2)} °C</p>
+                                    <p>Wind Speed: {(locationWeather.wind_speed).toFixed(2)} mph</p>
 
-                                
-                            </div>
+                                    
+                                </div>
+                            )
                         }
                 </div>
             </div>
