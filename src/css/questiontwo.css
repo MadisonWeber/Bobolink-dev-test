@@ -1,0 +1,35 @@
+.questionTwo{
+    position: relative;
+    display: flex;
+    min-height: calc(100vh - var(--nav-height));
+    align-items: center;
+    justify-content: center;
+}
+
+.q2__answer h2{
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+
+
+/* .q2__answer form button{
+    border: 1px solid black;
+    background-color: var(--custom-orange);
+    padding: 5px 8px;
+    border-radius: 4px;
+} */
+
+
+.q2__answer form input{
+    padding: 6px;
+    outline: none;
+    margin-right: 4px;
+}
+
+.q2__answer span{
+    display: block;
+    margin-top: 20px;
+    font-weight: 700;
+}

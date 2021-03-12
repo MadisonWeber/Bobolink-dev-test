@@ -1,0 +1,30 @@
+.nav{
+    width: 100%;
+    height: var(--nav-height);
+    background-color: var(--nav-color);
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    color: white;
+    text-align: center;
+}
+
+.nav h1{
+    font-weight: 300;
+
+}
+
+.nav__links{
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav__links li{
+    background-color: var(--accent-grey);
+    padding: 3px 5px;
+    border-radius: 10px;
+    border: 1px solid #EEEEEE;
+    cursor: pointer;
+}

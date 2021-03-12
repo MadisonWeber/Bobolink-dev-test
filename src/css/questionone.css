@@ -1,0 +1,27 @@
+.questionOne{
+    min-height: calc(100vh - var(--nav-height));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    
+}
+
+.questionOne h2{
+    margin-bottom: 40px;
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.q1__answer{
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    align-items: center;
+}
+
+.q1__answer li{
+    margin-bottom: 4px;
+}
+

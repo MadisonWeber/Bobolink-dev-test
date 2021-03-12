@@ -1,0 +1,93 @@
+.questionFive{
+    position: relative;
+    padding: 10px;
+}   
+
+.q5__container{
+    border: 2px solid black;
+    min-height: 600px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.weatherForm{
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+    height: 140px;
+    justify-content: space-evenly;
+    padding: 10px;
+    border: 2px solid var(--accent-grey);
+}
+
+.weatherForm label{
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.weatherForm input{
+    padding: 4px;
+    outline: none;
+}
+
+.container__left{
+    flex: .5;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.container__right{
+    flex: .5;
+    min-width: 400px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+
+}  
+
+.search__result{
+    background-color: white;
+    text-align: center;
+    width: 140px;
+    border: 1px solid black;
+    margin: 8px 0;
+    cursor: pointer;
+    padding: 4px;
+
+}
+
+.search__result :hover{
+    transform: scale(1.05);
+}
+
+
+.search__result :active{
+    color: var(--custom-orange);
+}
+
+.weather__card{
+    width: min(100%, 340px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: white;
+    border: 2px solid var(--accent-grey);
+    margin: 10px;
+    padding: 20px;
+}
+
+.weather__card * {
+    margin-bottom: 8px;
+}
+
+.weather__card{
+
+}
