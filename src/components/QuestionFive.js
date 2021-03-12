@@ -57,7 +57,7 @@ const QuestionFive = () => {
                 <div className="container__left">
                     <form className = 'weatherForm'>
                         <label htmlFor="weatherSearch">Search For Weather By Location</label>
-                        <input type="text" id = 'weatherSearch' value = {query} onChange = {(e)=> setQuery(e.currentTarget.value)} placeholder = 'Type here to search' />
+                        <input type="text" id = 'weatherSearch' value = {query} onChange = {(e)=> setQuery(e.currentTarget.value)} placeholder = 'Type here to search' autoComplete="off"  />
                         <span style = {{fontSize : '11px'}}>Seach must be 3 charcters long</span>
                     </form>
 
